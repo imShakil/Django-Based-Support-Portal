@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from profiles import views
+from profiles import views as profileViews
+from alerts import views as alertViews
+from tickets import views as ticketViews
+
 
 urlpatterns = [
     path("", views.dashboard, name='home'),
@@ -23,5 +26,7 @@ urlpatterns = [
     path("ticket/", include("tickets.urls")),
     path("dashboard/", include("profiles.urls")),
     path("search/", include("search.urls")),
-    path("alert/", include("alerts.urls"))
+    path("alert/", include("alerts.urls")),
+    path("facultynstaff/<int:id>", views.facultynstaff, name='faculty and staff')
 ]
+

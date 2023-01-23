@@ -4,5 +4,7 @@ from . import views
 app_name = 'ticket'
 
 urlpatterns = [
-    path('ticket', views.ticket, name='ticket')
+    path('ticket/<slug:tn>', views.ticket, name='ticket')
 ]
+
+

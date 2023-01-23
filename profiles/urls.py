@@ -5,5 +5,5 @@ app_name = 'profile'
 
 urlpatterns = [
     path('open-tickets', views.tickets, name='open-ticket'),
-    path('profile', views.profile, name='profile'),
+    path('profile/<str:userName>', views.profile, name='profile'),
 ]
